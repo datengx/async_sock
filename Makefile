@@ -1,4 +1,4 @@
-TARGETS=ishell
+TARGETS=ishell simple_client
 CC=gcc
 CCOPTS=-Wall -Wextra
 INC=
@@ -16,3 +16,7 @@ make_directory:
 ishell:
 	$(CC) $(CCOPTS) $(INC) -o ush ush.c makeargv.c $(LIBS)
 	mv ush ./bin
+
+simple_client:
+	$(CC) $(CCOPTS) $(INC) -o simple_client simple_client.c $(LIBS)
+	mv simple_client ./bin

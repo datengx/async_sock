@@ -13,6 +13,7 @@
 int main (int argc, char *argv[])
 {
   // Creating the bluetooth socket
+  /*
   int sock = socket(AF_BLUETOOTH, SOCK_STREAM, BTPROTO_RFCOMM);
   struct sockaddr_rc rem_addr = {0};
   char dest[18] = "60:57:18:7E:77:68";
@@ -21,10 +22,10 @@ int main (int argc, char *argv[])
   rem_addr.rc_family = AF_BLUETOOTH;
   rem_addr.rc_channel = 13;
   status = connect(s, (struct sockaddr*) & rem_addr, sizeof(rem_addr));
+  */
 
 
-  
-  
+
 
 
   char inbuf[MAX_BUFFER];
@@ -38,12 +39,12 @@ int main (int argc, char *argv[])
      else {
         if (fork() == 0) {
            if (makeargv(inbuf, BLANK_STRING, &chargv) > 0)
-     { 
+     {
               execvp(chargv[0], chargv);
      }
         }
         wait(NULL);
-     } 
-  }   
+     }
+  }
   return 0;
 }
